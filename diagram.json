@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "author": "Mihai Bruma",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-nano", "id": "nano", "top": -4.67, "left": 106, "attrs": {} },
+    { "type": "board-ssd1306", "id": "oled1", "top": 120.74, "left": -43.37, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 115.81,
+      "left": 136.98,
+      "attrs": { "color": "white", "key": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 170.73,
+      "left": 139.2,
+      "attrs": { "color": "red", "key": "l" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 224.06,
+      "left": 140.53,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "oled1:SCL", "nano:A5", "green", [ "v-44.47", "h186.63" ] ],
+    [ "oled1:SDA", "nano:A4", "green", [ "v-51.8", "h171.47", "v-3.33" ] ],
+    [ "oled1:VCC", "nano:3.3V", "red", [ "v-59.14", "h131.41" ] ],
+    [ "oled1:GND", "nano:GND.2", "black", [ "v-153.8", "h235.53" ] ],
+    [ "btn1:1.r", "nano:6", "white", [ "v-0.37", "h89.76", "v-188.67", "h-112.67" ] ],
+    [ "btn2:1.r", "nano:5", "red", [ "v-1.3", "h78.3", "v-48.67", "h16", "v-198", "h-107.33" ] ],
+    [
+      "btn3:1.r",
+      "nano:4",
+      "green",
+      [ "v0.04", "h70.97", "v-51.33", "h11.33", "v-47.33", "h15.33", "v-208.32", "h-102.66" ]
+    ],
+    [ "btn1:2.r", "nano:GND.1", "black", [ "h32.71", "v-78.28" ] ],
+    [ "btn2:2.r", "nano:GND.1", "black", [ "h6.81", "v-51.17", "h31.02", "v-93.83" ] ],
+    [ "btn3:2.r", "nano:GND.1", "black", [ "h10.39", "v-100.01", "h28.28" ] ]
+  ],
+  "dependencies": {}
+}
